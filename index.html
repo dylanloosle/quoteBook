@@ -6,16 +6,22 @@
 
 </head>
 <body data-ng-controller="mainCtrl">
+
 Add Text
 <input data-ng-model="quote.text"/>
 Add Author
 <input data-ng-model="quote.author"/>
 
-<button id="add" data-ng-click="addQuote(quote)">Add Quote</button>
-<button data-ng-click="">Remove Quote</button>
+<button data-ng-click="addQuotes(quote)">Add Quote</button>
+
+Remove quote
+<input data-ng-model="input"/>
+<button data-ng-click="removeQuotes(input)">Remove Quote</button>
+
+<input data-ng-model="searchTerm"/>
 <button data-ng-click="">Filter Quotes</button>
 <p></p>
-<div data-ng-repeat="quote in quotes">
+<div data-ng-repeat="quote in quotes | filter: searchTerm">
     <div>{{quote.text}}</div>
     <div>{{quote.author}}</div>
     <p></p>

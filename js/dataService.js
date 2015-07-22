@@ -13,15 +13,13 @@ app.service('dataService', function(){
         return quotes;
     };
     this.addData = function(quote){
-            if(quote.text && quote.author) {
                 quotes.push(quote);
-            }
     };
-    this.removeData = function(str){
+    this.removeData = function(input){
         for(var i = 0; i < quotes.length; i++){
-            if(str === [i].text){
-                quotes.splice(i, 1);
-            }
+                if (input === quotes[i].text) {
+                    quotes.splice(i, 1);
+                }
 
         }
 
