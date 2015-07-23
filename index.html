@@ -2,12 +2,12 @@
 <html data-ng-app="quoteBook">
 <head>
     <link type="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 </head>
 <body data-ng-controller="mainCtrl">
 
-<select ng-model="select">
+<select data-ng-model="select">
     <option value="add">Add</option>
     <option value="remove">Remove</option>
     <option value="filter">Filter</option>
@@ -34,6 +34,7 @@
 <div data-ng-repeat="quote in quotes | filter:searchTerm">
     <div>{{quote.text}}</div>
     <div>{{quote.author}}</div>
+    <button><i class="fa fa-anchor"></i></button>
     <p></p>
 </div>
 

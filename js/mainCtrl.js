@@ -11,5 +11,8 @@ app.controller('mainCtrl', function($scope, dataService){
     };
     $scope.searchTerm = [];
 
+    $scope.removeQuote = function(){
+        dataService.removing();
+    };
 
 });
