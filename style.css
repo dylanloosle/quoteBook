@@ -1,0 +1,24 @@
+body {
+    background: #F1F1F1;
+}
+.outline {
+    background: #004E8E;
+    border: 1px solid black;
+    margin: 3%;
+    padding: 2%;
+    color: white;
+}
+
+.anchor {
+    float: right;
+}
+
+.dropdown {
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+.selector {
+    margin-left: 3%;
+    margin-top: 3%;
+}
