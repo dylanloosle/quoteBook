@@ -7,21 +7,31 @@
 </head>
 <body data-ng-controller="mainCtrl">
 
-Add Text
-<input data-ng-model="quote.text"/>
-Add Author
-<input data-ng-model="quote.author"/>
-
-<button data-ng-click="addQuotes(quote)">Add Quote</button>
-
-Remove quote
-<input data-ng-model="input"/>
-<button data-ng-click="removeQuotes(input)">Remove Quote</button>
-
-<input data-ng-model="searchTerm"/>
-<button data-ng-click="">Filter Quotes</button>
+<select ng-model="select">
+    <option value="add">Add</option>
+    <option value="remove">Remove</option>
+    <option value="filter">Filter</option>
+</select>
+<div data-ng-show="select==='add'">
+    <button data-ng-click="addQuotes(quote)">Add Quote</button>
+    Add Text
+    <input data-ng-model="quote.text"/>
+    Add Author
+    <input data-ng-model="quote.author"/>
+</div>
 <p></p>
-<div data-ng-repeat="quote in quotes | filter: searchTerm">
+<div data-ng-show="select==='remove'">
+    <button data-ng-click="removeQuotes(input)">Remove Quote</button>
+    Remove quote:
+    <input data-ng-model="input"/>
+</div>
+<p></p>
+
+<div data-ng-show="select==='filter'">Filter Quotes
+    <input data-ng-model="searchTerm"/>
+</div>
+<p></p>
+<div data-ng-repeat="quote in quotes | filter:searchTerm">
     <div>{{quote.text}}</div>
     <div>{{quote.author}}</div>
     <p></p>

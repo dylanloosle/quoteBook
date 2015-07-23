@@ -10,4 +10,6 @@ app.controller('mainCtrl', function($scope, dataService){
         dataService.removeData(input);
     };
     $scope.searchTerm = [];
+
+
 });

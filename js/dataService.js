@@ -13,7 +13,12 @@ app.service('dataService', function(){
         return quotes;
     };
     this.addData = function(quote){
-                quotes.push(quote);
+        if(quote.author === undefined || quote.text === undefined){
+            alert('Missing info!');
+        }
+        else {
+            quotes.push(quote);
+        }
     };
     this.removeData = function(input){
         for(var i = 0; i < quotes.length; i++){
